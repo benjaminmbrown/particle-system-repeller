@@ -26,14 +26,13 @@ function ParticleSystem(num,position){
 
 	this.applyRepeller = function(r){
 		for(var i = 0; i< this.particles.length;i++){
-			var p = this.particles[i];
-			var force = r.repel(p);
-			p.applyForce(force);
+			this.particles[i].applyForce(r.repel(this.particles[i]));
 		}
 	}
 
 	this.applyAttractor = function(r){
 		for(var i = 0; i< this.particles.length;i++){
+			this.particles[i].applyForce(r.attract(this.particles[i]));
 			var p = this.particles[i];
 			var force = r.attract(p);
 			p.applyForce(force);

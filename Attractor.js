@@ -1,6 +1,6 @@
 var Attractor = function(x, y) {
 
-    this.power = 50;
+    this.power = 150;
     this.position = createVector(x, y);
 
     this.display = function() {
@@ -14,7 +14,7 @@ var Attractor = function(x, y) {
 	this.attract = function(p){
 		var force = p5.Vector.sub(this.position,p.position);
 		var distance = force.mag();
-		distance = constrain(distance,5,25);
+		distance = constrain(distance,5,35);
 		force.normalize();
 		var strength = 1 * this.power/(distance*distance);
 		force.mult(strength);
