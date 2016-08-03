@@ -8,12 +8,13 @@ function setup() {
  setFrameRate(60);
  repeller = new Repeller(width/2-30,height/2);
  attractor = new Attractor(width/2+50, height/2);
+ console.log(attractor);
 }
 
 function draw(){
 	background(255);
 	var gravity = createVector(0.0,0.1);
-
+	
 
 	for (var i = 0; i<particleSystems.length;i++){
 		particleSystems[i].applyForce(gravity);
@@ -22,6 +23,8 @@ function draw(){
 		particleSystems[i].addParticle();
 		particleSystems[i].run();
 	}
+	attractor.display();
+	repeller.display();
 }
 
 function mousePressed(){
