@@ -32,6 +32,14 @@ function ParticleSystem(num,position){
 		}
 	}
 
+	this.applyAttractor = function(r){
+		for(var i = 0; i< this.particles.length;i++){
+			var p = this.particles[i];
+			var force = r.attract(p);
+			p.applyForce(force);
+		}
+	}
+
 	this.addParticle = function(){
 		var r = random(1);
 		if(r<0.5){

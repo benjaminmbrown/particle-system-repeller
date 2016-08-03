@@ -1,12 +1,13 @@
 
 var particleSystems = [];
-var repeller;
+var repeller, attractor;
 
 
 function setup() {
  createCanvas(640, 360);
  setFrameRate(60);
  repeller = new Repeller(width/2-30,height/2);
+ attractor = new Attractor(width/2+50, height/2);
 }
 
 function draw(){
@@ -16,7 +17,8 @@ function draw(){
 
 	for (var i = 0; i<particleSystems.length;i++){
 		particleSystems[i].applyForce(gravity);
-		particleSystems[i].applyRepeller(repeller)
+		particleSystems[i].applyRepeller(repeller);
+		particleSystems[i].applyAttractor(attractor);
 		particleSystems[i].addParticle();
 		particleSystems[i].run();
 	}
