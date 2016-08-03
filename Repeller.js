@@ -3,8 +3,8 @@ var Repeller = function(x, y) {
     this.power = 300;
     this.position = createVector(x, y);
 
-    this.display = function)() {
-    	stroke(255);
+    this.display = function() {
+    	stroke(0);
     	strokeWeight(2);
     	fill(127);
     	ellipse(this.position.x,this.position.y,40,40);

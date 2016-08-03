@@ -15,8 +15,21 @@ function ParticleSystem(num,position){
 		}
 	};
 
+
+
 	this.applyForce = function(force){
 		console.log('applying force:', force);
+		for(var i = 0; i < this.particles.length;i++){
+			this.particles[i].applyForce(force);
+		}
+	}
+
+	this.applyRepeller = function(r){
+		for(var i = 0; i< this.particles.length;i++){
+			var p = this.particles[i];
+			var force = r.repel(p);
+			p.applyForce(force);
+		}
 	}
 
 	this.addParticle = function(){

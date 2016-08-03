@@ -23,7 +23,7 @@ function Particle(position){
 		this.velocity.add(this.acceleration);
 		this.position.add(this.velocity);
 		this.acceleration.mult(0);
-		this.lifespan -= 2;
+		this.lifespan -= 3;
 	}
 
 	this.isDead = function(){
